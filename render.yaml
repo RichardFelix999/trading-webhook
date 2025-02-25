@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tradingview-webhook
+    env: docker
+    region: oregon
+    plan: free
+    repo: https://github.com/RichardFelix999/trading-webhook
+    branch: main
+    healthCheckPath: /
+    autoDeploy: true
