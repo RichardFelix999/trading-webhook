@@ -1,0 +1,9 @@
+{
+  "name": "tradingview-webhook",
+  "require": {
+    "php": "^7.4",
+    "ext-pdo": "*",
+    "ext-pdo_pgsql": "*",
+    "vlucas/phpdotenv": "^5.4"
+  }
+}
