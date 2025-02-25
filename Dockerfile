@@ -10,16 +10,16 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     && docker-php-ext-install zip mbstring
 
-# Install Composer
+# Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy application files (including composer.json)
-COPY . /var/www/html
+# Copy application files
+COPY . .
 
-# Install PHP dependencies safely
+# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progress
 
 # Expose port
