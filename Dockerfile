@@ -10,6 +10,9 @@ COPY . /var/www/html/
 # Set permissions
 RUN chmod -R 755 /var/www/html/
 
+# Install dependencies
+RUN composer install --no-dev --optimize-autoloader
+
 # Expose port 80
 EXPOSE 80
 
